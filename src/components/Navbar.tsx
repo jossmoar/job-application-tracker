@@ -12,11 +12,10 @@ export function Navbar() {
   }
 
   return (
-    <nav className="border-b border-hairline bg-surface/80 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="Ima Developer" className="h-8 w-8 object-contain" />
-          <span className="font-display text-sm font-medium text-ink-primary">Ima Developer</span>
+    <nav className="sticky top-0 z-40 border-b border-hairline bg-surface/80 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-5">
+        <Link to="/" aria-label="Ima Developer">
+          <img src={logo} alt="Ima Developer" className="h-12 w-12 object-contain" />
         </Link>
 
         <div className="flex items-center gap-3">

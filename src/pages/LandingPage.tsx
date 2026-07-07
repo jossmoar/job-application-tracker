@@ -74,9 +74,10 @@ export function LandingPage() {
           ))}
         </div>
 
-        <p data-aos="fade-up" className="mt-10 text-center text-xs text-ink-muted">
-          {t("landing.footerNote")}
-        </p>
+        {/* No data-aos here: as the last element on the page, its scroll
+            trigger point can exceed the page's max scroll depth and never
+            fire — not worth chasing for a footer credit line. */}
+        <p className="mt-10 text-center text-xs text-ink-muted">{t("landing.footerNote")}</p>
       </div>
     </div>
   );

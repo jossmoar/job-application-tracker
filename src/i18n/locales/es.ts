@@ -57,7 +57,7 @@ export const es = {
         {
           title: "Métricas al instante",
           description:
-            "Contadores en vivo por estado y total, para ver de un vistazo cómo va la búsqueda.",
+            "Contadores en vivo por estado y total, para que veas de un vistazo cómo va tu búsqueda.",
         },
         {
           title: "Búsqueda y filtros",

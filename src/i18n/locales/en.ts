@@ -56,7 +56,7 @@ export const en = {
         },
         {
           title: "Instant metrics",
-          description: "Live counters per status and total, so you see your search at a glance.",
+          description: "Live counters per status and total, so you see your progress at a glance.",
         },
         {
           title: "Search & filters",
