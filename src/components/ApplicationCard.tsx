@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { ApplicationStatus, JobApplication } from "../types";
 import { APPLICATION_STATUSES } from "../types";
 import { StatusBadge } from "./StatusBadge";
@@ -9,6 +10,13 @@ interface ApplicationCardProps {
 }
 
 export function ApplicationCard({ application, onStatusChange, onRemove }: ApplicationCardProps) {
+  const { t, i18n } = useTranslation();
+
+  const formattedDate = new Date(application.dateApplied + "T00:00:00").toLocaleDateString(
+    i18n.language === "en" ? "en-US" : "es-CR",
+    { year: "numeric", month: "short", day: "numeric" },
+  );
+
   return (
     <div className="flex flex-col gap-3 rounded-2xl border border-hairline bg-surface p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-center gap-3">
@@ -16,11 +24,7 @@ export function ApplicationCard({ application, onStatusChange, onRemove }: Appli
           <p className="font-display text-lg font-medium text-ink-primary">{application.company}</p>
           <p className="text-sm text-ink-secondary">{application.position}</p>
           <p className="mt-1 text-xs text-ink-muted">
-            Aplicado el {new Date(application.dateApplied + "T00:00:00").toLocaleDateString("es-CR", {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            })}
+            {t(`dateVerb.${application.status}`)} {formattedDate}
           </p>
         </div>
       </div>
@@ -34,16 +38,16 @@ export function ApplicationCard({ application, onStatusChange, onRemove }: Appli
         >
           {APPLICATION_STATUSES.map((s) => (
             <option key={s} value={s}>
-              {s}
+              {t(`status.${s}`)}
             </option>
           ))}
         </select>
         <button
           onClick={() => onRemove(application.id)}
-          aria-label={`Eliminar aplicación a ${application.company}`}
+          aria-label={t("list.deleteAriaLabel", { company: application.company })}
           className="rounded-lg px-2 py-1.5 text-xs text-ink-muted transition-colors hover:bg-status-rejected/10 hover:text-status-rejected"
         >
-          Eliminar
+          {t("list.delete")}
         </button>
       </div>
     </div>

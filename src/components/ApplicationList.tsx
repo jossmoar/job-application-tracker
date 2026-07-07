@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import type { ApplicationStatus, JobApplication } from "../types";
 import { ApplicationCard } from "./ApplicationCard";
 
@@ -8,10 +9,12 @@ interface ApplicationListProps {
 }
 
 export function ApplicationList({ applications, onStatusChange, onRemove }: ApplicationListProps) {
+  const { t } = useTranslation();
+
   if (applications.length === 0) {
     return (
       <div className="rounded-2xl border border-dashed border-hairline p-10 text-center text-sm text-ink-muted">
-        No hay aplicaciones que coincidan.
+        {t("list.empty")}
       </div>
     );
   }

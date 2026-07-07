@@ -1,4 +1,5 @@
 import { useState, type SubmitEvent } from "react";
+import { useTranslation } from "react-i18next";
 import type { ApplicationStatus, JobApplication } from "../types";
 import { APPLICATION_STATUSES } from "../types";
 
@@ -10,6 +11,7 @@ interface ApplicationFormProps {
 const today = () => new Date().toISOString().slice(0, 10);
 
 export function ApplicationForm({ onAdd, onSubmitted }: ApplicationFormProps) {
+  const { t } = useTranslation();
   const [company, setCompany] = useState("");
   const [position, setPosition] = useState("");
   const [dateApplied, setDateApplied] = useState(today);
@@ -33,7 +35,7 @@ export function ApplicationForm({ onAdd, onSubmitted }: ApplicationFormProps) {
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
         className={inputClasses}
-        placeholder="Empresa"
+        placeholder={t("form.company")}
         value={company}
         onChange={(e) => setCompany(e.target.value)}
         required
@@ -41,7 +43,7 @@ export function ApplicationForm({ onAdd, onSubmitted }: ApplicationFormProps) {
       />
       <input
         className={inputClasses}
-        placeholder="Puesto"
+        placeholder={t("form.position")}
         value={position}
         onChange={(e) => setPosition(e.target.value)}
         required
@@ -60,7 +62,7 @@ export function ApplicationForm({ onAdd, onSubmitted }: ApplicationFormProps) {
       >
         {APPLICATION_STATUSES.map((s) => (
           <option key={s} value={s}>
-            {s}
+            {t(`status.${s}`)}
           </option>
         ))}
       </select>
@@ -68,7 +70,7 @@ export function ApplicationForm({ onAdd, onSubmitted }: ApplicationFormProps) {
         type="submit"
         className="rounded-xl bg-ink-primary px-4 py-2.5 text-sm font-medium text-plane transition-opacity hover:opacity-90"
       >
-        Agregar
+        {t("form.submit")}
       </button>
     </form>
   );
