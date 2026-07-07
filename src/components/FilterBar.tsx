@@ -1,0 +1,40 @@
+import type { ApplicationStatus } from "../types";
+import { APPLICATION_STATUSES } from "../types";
+
+interface FilterBarProps {
+  query: string;
+  onQueryChange: (value: string) => void;
+  statusFilter: ApplicationStatus | "All";
+  onStatusFilterChange: (value: ApplicationStatus | "All") => void;
+}
+
+export function FilterBar({
+  query,
+  onQueryChange,
+  statusFilter,
+  onStatusFilterChange,
+}: FilterBarProps) {
+  return (
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => onQueryChange(e.target.value)}
+        placeholder="Buscar por empresa o puesto..."
+        className="w-full rounded-xl border border-hairline bg-surface px-4 py-2.5 text-sm text-ink-primary placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-status-applied/40 sm:max-w-sm"
+      />
+      <select
+        value={statusFilter}
+        onChange={(e) => onStatusFilterChange(e.target.value as ApplicationStatus | "All")}
+        className="rounded-xl border border-hairline bg-surface px-4 py-2.5 text-sm text-ink-primary focus:outline-none focus:ring-2 focus:ring-status-applied/40"
+      >
+        <option value="All">Todos los estados</option>
+        {APPLICATION_STATUSES.map((status) => (
+          <option key={status} value={status}>
+            {status}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
