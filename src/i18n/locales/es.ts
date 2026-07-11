@@ -1,8 +1,11 @@
 export const es = {
   translation: {
     nav: {
-      backHome: "Volver a inicio",
-      openTracker: "Abrir tracker",
+      home: "Inicio",
+      viewCode: "Ver código",
+      share: "Compartir",
+      linkCopied: "¡Enlace copiado!",
+      menuAriaLabel: "Abrir menú",
     },
     app: {
       title: "Job Application Tracker",
@@ -78,6 +81,14 @@ export const es = {
         },
       ],
       footerNote: "Construido con Vite, React, TypeScript y Tailwind CSS.",
+    },
+    footer: {
+      pitch:
+        "Un proyecto real de portafolio: organiza tus postulaciones de trabajo sin depender de una hoja de cálculo. Código abierto — échele un vistazo y úsela de inspiración para el suyo.",
+      emailAriaLabel: "Enviar email",
+      websiteAriaLabel: "Visitar sitio web",
+      linkedinAriaLabel: "Visitar LinkedIn",
+      rights: "Hecho por Joselin Montero.",
     },
   },
 };

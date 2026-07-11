@@ -18,7 +18,7 @@ export function ApplicationCard({ application, onStatusChange, onRemove }: Appli
   );
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-hairline bg-surface p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex flex-col gap-3 rounded-2xl border border-hairline bg-surface p-4 shadow-sm mdx:flex-row mdx:items-center mdx:justify-between mdx:p-5">
       <div className="flex items-center gap-3">
         <div>
           <p className="font-display text-lg font-medium text-ink-primary">{application.company}</p>
@@ -29,7 +29,7 @@ export function ApplicationCard({ application, onStatusChange, onRemove }: Appli
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-2 mdx:flex-nowrap mdx:gap-3">
         <StatusBadge status={application.status} />
         <select
           value={application.status}

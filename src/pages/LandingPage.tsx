@@ -12,7 +12,7 @@ export function LandingPage() {
 
   return (
     <div className="min-h-screen bg-plane">
-      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 pb-20 pt-20 text-center">
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 pb-14 pt-14 text-center mdx:px-6 mdx:pb-20 mdx:pt-20">
         <span
           data-aos="fade-up"
           className="rounded-full border border-hairline bg-surface px-3 py-1 text-xs font-medium text-ink-secondary"
@@ -23,7 +23,7 @@ export function LandingPage() {
         <h1
           data-aos="fade-up"
           data-aos-delay="80"
-          className="font-display text-4xl font-medium tracking-tight text-ink-primary sm:text-5xl"
+          className="font-display text-3xl font-medium tracking-tight text-ink-primary mdx:text-5xl"
         >
           {t("landing.heroTitle")}
         </h1>
@@ -52,7 +52,7 @@ export function LandingPage() {
         </div>
       </div>
 
-      <div id="features" className="mx-auto max-w-5xl px-6 pb-20">
+      <div id="features" className="mx-auto max-w-5xl px-4 pb-14 mdx:px-6 mdx:pb-20">
         <h2
           data-aos="fade-up"
           className="mb-6 text-center font-display text-2xl font-medium text-ink-primary"
@@ -60,7 +60,7 @@ export function LandingPage() {
           {t("landing.featuresTitle")}
         </h2>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 mdx:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, i) => (
             <div
               key={feature.title}

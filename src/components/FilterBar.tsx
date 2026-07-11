@@ -18,18 +18,18 @@ export function FilterBar({
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+    <div className="flex flex-col gap-3 mdx:flex-row mdx:items-center">
       <input
         type="text"
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
         placeholder={t("filter.searchPlaceholder")}
-        className="w-full rounded-xl border border-hairline bg-surface px-4 py-2.5 text-sm text-ink-primary placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-status-applied/40 sm:max-w-sm"
+        className="w-full rounded-xl border border-hairline bg-surface px-4 py-2.5 text-sm text-ink-primary placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-status-applied/40 mdx:max-w-sm"
       />
       <select
         value={statusFilter}
         onChange={(e) => onStatusFilterChange(e.target.value as ApplicationStatus | "All")}
-        className="rounded-xl border border-hairline bg-surface px-4 py-2.5 text-sm text-ink-primary focus:outline-none focus:ring-2 focus:ring-status-applied/40"
+        className="w-full rounded-xl border border-hairline bg-surface px-4 py-2.5 text-sm text-ink-primary focus:outline-none focus:ring-2 focus:ring-status-applied/40 mdx:w-auto"
       >
         <option value="All">{t("filter.allStatuses")}</option>
         {APPLICATION_STATUSES.map((status) => (

@@ -40,6 +40,10 @@
 }
 
 @theme {
+  /* Custom breakpoint: mobile-first design lives below this, and the
+     pre-existing desktop layout is preserved unchanged from here up. */
+  --breakpoint-mdx: 50rem;
+
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Fraunces", "Inter", system-ui, serif;
 

@@ -38,20 +38,20 @@ export function TrackerPage() {
 
   return (
     <div className="min-h-screen bg-plane">
-      <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 py-12">
+      <div className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-8 mdx:gap-8 mdx:px-6 mdx:py-12">
         <header
           data-aos="fade-up"
-          className="flex items-start justify-between gap-4"
+          className="flex flex-col items-start gap-4 mdx:flex-row mdx:justify-between"
         >
           <div>
-            <h1 className="font-display text-4xl font-medium tracking-tight text-ink-primary">
+            <h1 className="font-display text-2xl font-medium tracking-tight text-ink-primary mdx:text-4xl">
               {t("app.title")}
             </h1>
             <p className="mt-1 text-sm text-ink-secondary">{t("app.subtitle")}</p>
           </div>
           <button
             onClick={() => setIsFormOpen(true)}
-            className="shrink-0 rounded-xl bg-ink-primary px-4 py-2.5 text-sm font-medium text-plane transition-opacity hover:opacity-90"
+            className="w-full shrink-0 rounded-xl bg-ink-primary px-4 py-2.5 text-sm font-medium text-plane transition-opacity hover:opacity-90 mdx:w-auto"
           >
             {t("app.addButton")}
           </button>

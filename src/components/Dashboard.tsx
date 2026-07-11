@@ -14,7 +14,7 @@ export function Dashboard({ applications }: { applications: JobApplication[] }) 
   };
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+    <div className="grid grid-cols-2 gap-2 mdx:gap-3 mdx:grid-cols-3 lg:grid-cols-5">
       <StatTile label={t("dashboard.total")} value={counts.total} />
       <StatTile label={t("status.Applied")} value={counts.Applied} accent="var(--color-status-applied)" />
       <StatTile label={t("status.Interview")} value={counts.Interview} accent="var(--color-status-interview)" />

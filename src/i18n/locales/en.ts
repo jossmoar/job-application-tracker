@@ -1,8 +1,11 @@
 export const en = {
   translation: {
     nav: {
-      backHome: "Back to home",
-      openTracker: "Open tracker",
+      home: "Home",
+      viewCode: "View code",
+      share: "Share",
+      linkCopied: "Link copied!",
+      menuAriaLabel: "Open menu",
     },
     app: {
       title: "Job Application Tracker",
@@ -76,6 +79,14 @@ export const en = {
         },
       ],
       footerNote: "Built with Vite, React, TypeScript and Tailwind CSS.",
+    },
+    footer: {
+      pitch:
+        "A real portfolio project: organize your job applications without a messy spreadsheet. Open source — take a look and borrow the idea for your own.",
+      emailAriaLabel: "Send an email",
+      websiteAriaLabel: "Visit website",
+      linkedinAriaLabel: "Visit LinkedIn",
+      rights: "Made by Joselin Montero.",
     },
   },
 };

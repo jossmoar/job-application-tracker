@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import AOS from "aos";
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 import { LandingPage } from "./pages/LandingPage";
 import { TrackerPage } from "./pages/TrackerPage";
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/tracker" element={<TrackerPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
