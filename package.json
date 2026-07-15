@@ -12,6 +12,7 @@
   "dependencies": {
     "aos": "^2.3.4",
     "i18next": "^26.3.4",
+    "posthog-js": "^1.400.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-i18next": "^17.0.8",
